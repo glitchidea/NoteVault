@@ -1,74 +1,62 @@
-# SecureNote
+# NoteVault
 
-SecureNote is an encrypted note-taking application designed to securely store your notes. With its user-friendly interface, you can easily create, edit, and manage your notes. All your data is protected by encryption, ensuring that your information remains safe.
+NoteVault is a secure, console-based note management application built in Python. It allows users to create, read, update, and delete notes while ensuring data security through encryption and backup features.
 
 ## Features
 
-- **Encrypted Notes**: All your notes are protected using a strong encryption algorithm. Only you can access and view them.
-- **Password Protection**: Upon first launch, you will be prompted to set a strong password. This password controls access to your notes.
-- **Note Management**: 
-  - **Add New Note**: Create new notes by adding a title, content, and tags.
-  - **Update Note**: Update existing notes through the title, content, or tags.
-  - **Delete Note**: Easily delete notes you no longer need.
-  - **Search Notes**: Quickly search for notes based on specific keywords.
-- **Backup Options**: Various methods are available for backing up your data and restoring it when necessary.
-- **Tagging**: Add tags to your notes for better organization and quick access to the notes you are looking for.
-- **Database Management**: Change the database location, perform backups, and restore processes.
+- **Create Notes:** Easily add notes with a title, content, and tags.
+- **View Notes:** Display a list of all your notes with details.
+- **Update Notes:** Modify existing notes as needed.
+- **Delete Notes:** Remove notes you no longer need.
+- **Tagging System:** Organize your notes with tags for easy retrieval.
+- **Search Functionality:** Find notes by keywords in titles or content.
+- **Secure Storage:** Notes are encrypted for maximum privacy.
+- **Backup and Restore:** Create backups of your notes and restore them when necessary.
+- **Configuration Options:** Change settings such as database location and encryption keys.
 
 ## Installation
 
-### Requirements
-
-- Python 3.x
-- The following libraries:
-  - `cryptography`
-  - `sqlite3`
-  - `getpass`
-  - `hashlib`
-  - `shutil`
-  
-### Steps
-
-1. **Clone the Repository**:
+1. Ensure that Python 3.x is installed on your system.
+2. Install the required dependencies:
    ```bash
-   git clone https://github.com/glitchidea/ConsolMP.git
-   cd ConsolMP
+   pip install cryptography
    ```
-
-2. **Install Required Dependencies**:
-   Install the required libraries using:
+3. Clone the repository:
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/glitchidea/NoteVault.git
+   cd NoteVault
    ```
-
-3. **Run the Application**:
-   To start the application, use:
+4. Run the application:
    ```bash
-   python app.py
+   python main.py
    ```
 
 ## Usage
 
-- When the application opens, you will be prompted to set a password for the first time. This password will be used to access your notes.
-- The main menu offers the following options:
-  1. **New Note**: Creates a new note.
-  2. **All Notes**: Displays all saved notes.
-  3. **Search Note**: Allows you to search for notes by a specific keyword.
-  4. **Delete Note**: Deletes the note with the specified ID.
-  5. **Update Note**: Updates an existing note.
-  6. **Settings**: Manage application settings, perform backup and restore operations.
-  0. **Exit**: Exits the application.
+1. **Start the Application:** Execute `main.py` to launch NoteVault.
+2. **Main Menu Options:**
+   - 1: Create Note
+   - 2: View Notes
+   - 3: Update Note
+   - 4: Delete Note
+   - 5: Search Notes
+   - 6: Backup and Restore
+   - 0: Exit
+3. **Managing Your Notes:** Follow the prompts in the menu to manage your notes effectively.
 
 ## Security
 
-- The application uses a strong encryption algorithm to store your notes securely. Each note is accessible only with the password you set.
-- The password file and key file are protected to ensure the security of the application. Don't forget to back up these files.
+### Data Encryption
 
-## Contributing
+- **Encryption Mechanism:** NoteVault uses the `cryptography` library to encrypt all note data, ensuring that sensitive information is protected.
+- **Key Management:** An encryption key is generated and stored securely, required for both encrypting and decrypting notes.
 
-If you would like to contribute, please follow these steps:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-xyz`).
-3. Make your changes and commit them (`git commit -m 'Add some feature'`).
-4. Push your branch (`git push origin feature-xyz`).
-5. Create a pull request.
+### Password Protection
+
+- **User Authentication:** On the first launch, users must set a password. This password is used to secure access to notes.
+- **Integrity Checks:** The application verifies the integrity of the password file using hash checks to prevent tampering.
+
+### Backup and Restore
+
+- **Backup Functionality:** Users can create backups of their notes and encryption keys to avoid data loss.
+- **Restore Functionality:** Restore notes and settings from backups easily whenever needed.
